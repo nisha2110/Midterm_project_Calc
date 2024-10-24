@@ -4,6 +4,7 @@ import importlib
 import sys
 from calculator.commands import CommandHandler
 from calculator.commands import Command
+from calculator.history import CalculationHistory
 from dotenv import load_dotenv
 import logging
 import logging.config
@@ -18,6 +19,9 @@ class App:
         self.settings.setdefault('ENVIRONMENT', 'PRODUCTION')
         # Instantiate CommandHandler internally
         self.command_handler = CommandHandler()
+        self.csv_command = CsvCommand(self.command_handler)
+        self.history = CalculationHistory()  # Singleton instance for managing history
+
         
     
     def configure_logging(self):
@@ -75,6 +79,7 @@ class App:
     def start(self):
         # Register commands here
         self.load_plugins()
+        self.history.load_history()  # Load history when the app starts
         logging.info("Application started. Type 'exit' to exit.")
         print("Type 'exit' to exit.")
         logging.info("Type 'menu' to see all available commands.")
@@ -86,12 +91,24 @@ class App:
         while True:  # REPL: Read, Evaluate, Print, Loop
             user_input = input(">>> ").strip().lower()
             if user_input == 'exit':
+                self.history.save_history()  # Save history when exiting
                 logging.info("Application exit. Goodbye!")
                 raise SystemExit("Exiting...")
             elif user_input == 'menu':
                 self.print_available_commands()
             elif user_input == 'csv':
                  csv_command.execute()  # Print existing operations again if requested by the user
+            elif user_input == 'history':
+                self.history.print_history()
+            elif user_input.startswith('clear'):
+                self.history.clear_history()
+                logging.info("History cleared from memory and file.")
+            elif user_input.startswith('delete'):
+                self.history.delete_history_file()
+                logging.info("History file deleted.")
+            elif user_input.startswith('save'):
+                self.history.save_history()
+                logging.info("Calculator history saved.")    
                 
             else:
                 parts = user_input.split()
@@ -124,5 +141,6 @@ class App:
 
                     # Store the result in the CSV file
                     CsvCommand().execute(operation=command_name, a=arg1, b=arg2, result=result)
+                    self.history.add_record(command_name, arg1, arg2, result)
                     
 
