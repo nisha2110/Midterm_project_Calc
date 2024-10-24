@@ -31,35 +31,7 @@ def test_mock_command():
     
     # Verify that the sum of the inputs is returned
     assert result == 6, "The MockCommand should return the sum of the arguments"
-    
 
-'''
-def test_execute_command_valid():
-    handler = CommandHandler()
-    command = MockCommand()
-    handler.register_command('add', command)
-
-    result = handler.execute_command('add', 1, 2, 3)
-    assert result == 6  # 1 + 2 + 3
-
-
-def test_execute_command_invalid():
-    handler = CommandHandler()
-    
-    result = handler.execute_command('invalid_command', 1, 2)
-    assert result == "No such command: 'invalid_command'"
-
-
-def test_get_registered_commands():
-    handler = CommandHandler()
-    command1 = MockCommand()
-    command2 = MockCommand()
-
-    handler.register_command('add', command1)
-    handler.register_command('subtract', command2)
-
-    registered_commands = handler.get_registered_commands()
-    assert sorted(registered_commands) == ['add', 'subtract']'''
 # Test for Add Command
 def test_add_command(capfd):
     command_handler = CommandHandler()
