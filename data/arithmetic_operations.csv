@@ -1,0 +1,11 @@
+Operation,Operand1,Operand2,Result
+
+add,3.0,5.0,8.0
+subtract,7.0,4.0,3.0
+multiply,5.0,4.0,20.0
+divide,4.0,2.0,2.0
+divide,6.0,0.0,Error: Cannot divide by zero
+add,1.0,2.0,3.0
+add,1.0,2.0,3.0
+add,1.0,2.0,3.0
+add,3.0,4.0,7.0
