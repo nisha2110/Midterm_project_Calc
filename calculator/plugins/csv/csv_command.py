@@ -26,17 +26,13 @@ class CsvCommand(Command):
         input_csv_file_path = os.path.join(data_dir, 'operations.csv')
         output_csv_file_path = os.path.join(data_dir, 'arithmetic_operations.csv')
 
-        # If the input CSV file exists, read the existing data
+        # Check if the input CSV file exists using Look Before You Leap (LBYL)
         if os.path.exists(input_csv_file_path):
-            try:
-                # Load existing operations from the input CSV file
-                df = pd.read_csv(input_csv_file_path)
-                logging.info("Loaded existing CSV file successfully.")
-            except Exception as e:
-                logging.error(f"Error reading input CSV file: {e}")
-                df = pd.DataFrame(columns=['Operation', 'Operand1', 'Operand2', 'Result'])
+        # Attempt to load existing operations from the input CSV file
+            df = pd.read_csv(input_csv_file_path)
+            logging.info("Loaded existing CSV file successfully.")
         else:
-            # Create a new DataFrame if the input file does not exist
+        # Create a new DataFrame if the input file does not exist
             df = pd.DataFrame(columns=['Operation', 'Operand1', 'Operand2', 'Result'])
 
         # Print existing records from the CSV
@@ -55,12 +51,10 @@ class CsvCommand(Command):
             # Save the operation data to the input CSV file
             df = pd.concat([df, new_record], ignore_index=True)  # Combine the old and new records
             
-            try:
-                df.to_csv(input_csv_file_path, index=False)
-                logging.info(f"Arithmetic operations saved to input CSV at '{input_csv_file_path}'.")
-            except Exception as e:
-                logging.error(f"Error writing to input CSV file: {e}")
-
+            
+            df.to_csv(input_csv_file_path, index=False)
+            logging.info(f"Arithmetic operations saved to input CSV at '{input_csv_file_path}'.")
+           
             # Append the new arithmetic operation record to the output CSV file
             if os.path.exists(output_csv_file_path):
                 # If the output file exists, append to it
