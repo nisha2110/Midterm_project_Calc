@@ -39,7 +39,7 @@ def test_start_menu_command(app):
         with patch('builtins.print') as mocked_print:
             with pytest.raises(SystemExit):
                 app.start()
-                mocked_print.assert_any_call("Available commands: menu")  # check for menu call
+                mocked_print.assert_any_call("Available commands: menu")
                 
 def test_start_invalid_command(app):
     with patch('builtins.input', side_effect=['invalid_command', 'exit']):
