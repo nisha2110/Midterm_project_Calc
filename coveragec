@@ -1,0 +1,10 @@
+[run]
+branch = True
+source = calculator 
+omit =
+    tests/* 
+    tests/conftest.py           
+    */__init__.py      
+
+[report]
+show_missing = True
