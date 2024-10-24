@@ -20,17 +20,17 @@ class CommandHandler:
     def get_registered_commands(self):
         return f"{list(self.commands.keys())}"   # Return the list of command names
 
+   # Example of EAFP
     def execute_command(self, name, arg1, arg2):
-        # Check if the command is registered (Look Before You Leap - LBYL)
-        if name in self.commands:
-            try:
-                # Attempt to execute the command
-                return self.commands[name].execute(arg1, arg2)
-            except ValueError as e:
-                logging.error(f"Error executing command '{name}': {e}")
-                return f"Error: {e}"  # Return the error message to the user
-        else:
+        try:
+            # Easier to Ask for Forgiveness than Permission: Attempt to execute directly[EAFP]
+            return self.commands[name].execute(arg1, arg2)
+        except KeyError:
+            # Handle the exception if the command does not exist
             logging.error(f"No such command: '{name}'")
             return f"No such command: '{name}'"
-
-
+        except ValueError as e:
+            # Handle specific error during command execution
+            logging.error(f"Error executing command '{name}': {e}")
+            return f"Error: {e}"  # Return the error message to the user
+        
