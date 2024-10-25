@@ -13,10 +13,11 @@
 - This feature involves setting up GitHub Actions to automatically run our program's tests whenever changes are pushed to the main branch. By doing this, yoweu can ensure that any new code additions or modifications don't break existing functionality.
 6. Environment Variables:
 - Using environment variables is important for managing sensitive data like passwords, API keys, and other configuration settings without hardcoding them in our program. By storing this information in environment variables, we can keep it secure and easily change it without modifying the code.
+- This variable indicates the environment in which your application is running. Common values include DEVELOPMENT, TESTING, and PRODUCTION and Ensure .env file is properly loaded (using packages like python-dotenv if needed) to access these variables.
 - create .env file 
  - ENVIRONMENT=DEVELOPMENT
  - DATABASE_USERNAME=root
- 
+ - Link to Example Code :[https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py]
 - we learn to create a .env file to store these variables locally and ensure that this file is added to .gitignore to prevent it from being accidentally pushed to GitHub. This practice protects sensitive information and helps maintain security in our projects. 
 7. Logging:
 - Adding logging functionality to our program will allow us to track application behavior, monitor usage, and debug more effectively. Unlike simple print statements, logging can provide more structured and detailed output.
@@ -43,16 +44,13 @@ Use the menu command within the REPL to view available commands.
 ## Design Patterns and Architecture:
 1. Facade Pattern:
 - Simplifies data manipulation using Pandas by encapsulating complex interactions.
-- Link Here []
+- Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/history.py]
 2. Command Pattern:
 - Structures commands within the REPL, enabling easier addition and management of commands.
-- Link Here
+- Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py]
 3. Factory Method, Singleton, and Strategy Patterns:
 - Enhance code flexibility and scalability.
-- Link Here 
-## Environment Variables:
-- Environment variables like LOG_LEVEL and LOG_FILE_PATH dynamically control logging behavior and output locations.
-- Link to Example Code :[]
+
 ## Logging:
 - logging.basicConfig() sets up logging with a specific format, outputting logs to both a file (calculator.log) and the console.
 - Reads the logging.conf file to set up the logging system based on the detailed configuration provided.
