@@ -83,6 +83,7 @@ class App:
         logging.info("Application started. Type 'exit' to exit.")
         print("Type 'exit' to exit.")
         logging.info("Type 'menu' to see all available commands.")
+    
         
         # Load existing data from the CSV file
         csv_command = CsvCommand(self.command_handler)  # Pass command handler if needed
@@ -104,12 +105,13 @@ class App:
                 self.history.clear_history()
                 logging.info("History cleared from memory and file.")
             elif user_input.startswith('delete'):
-                self.history.delete_history_file()
-                logging.info("History file deleted.")
+                user_confirmation = input("Are you sure you want to delete the history file? (yes/no): ").strip().lower()
+                if user_confirmation == 'yes':
+                    self.history.delete_history_file()
+                    logging.info("History file deleted.")
             elif user_input.startswith('save'):
                 self.history.save_history()
-                logging.info("Calculator history saved.")    
-                
+                  
             else:
                 parts = user_input.split()
                 command_name = parts[0]

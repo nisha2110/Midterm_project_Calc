@@ -13,8 +13,8 @@ class CalculationHistory:
 
     def load_history(self):
         """Load history from the CSV file if it exists."""
-        if os.path.exists("arithmetic_operations.csv"):
-            self.history = pd.read_csv("arithmetic_operations.csv")
+        if os.path.exists("./data/arithmetic_operations.csv"):
+            self.history = pd.read_csv("./data/arithmetic_operations.csv")
             logging.info("History loaded from file.")
         else:
             logging.info("No history file to load.")
