@@ -2,7 +2,7 @@
 - This project is a Midterm project  focuses on building an advanced calculator app in python. It is designed to highlight industry level coding practicies and flow, including design patterns, modular code, logging, environment variable configuration and more. 
 
 ## Video demonstration:
-- Link Here [https://www.youtube.com/watch?v=eyA2-21DJp0]
+- Link Here  https://www.youtube.com/watch?v=eyA2-21DJp0
 ## Key Features:
 1. Basic Arithmetic Operations:
 - Integrate these concepts with existing program to add four basic commands: add, subtract, multiply, and divide, making calculator interactive  through a command-line interface (REPL).
@@ -19,7 +19,7 @@
 - create .env file 
  - ENVIRONMENT=DEVELOPMENT
  - DATABASE_USERNAME=root
- - Link to Example Code :[https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py]
+ - Link to Example Code: https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py
 - we learn to create a .env file to store these variables locally and ensure that this file is added to .gitignore to prevent it from being accidentally pushed to GitHub. This practice protects sensitive information and helps maintain security in our projects. 
 7. Logging:
 - Adding logging functionality to our program will allow us to track application behavior, monitor usage, and debug more effectively. Unlike simple print statements, logging can provide more structured and detailed output.
@@ -29,27 +29,27 @@
 - The REPL interface (app.start()) enables direct interaction with the calculator.
 Supports arithmetic operations (add, subtract, multiply, divide) and manages calculation history.
 To start, run python3 main.py and interact via the REPL.
--  Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py]
+-  Link Here https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py
 
 2. Plugin System:
 - Implemented a plugin loader to dynamically load new commands without changing core code.
 Plugins are detected from the plugins/ directory. Each plugin must follow the structure outlined in the documentation.
 Use the menu command within the REPL to view available commands.
-- Link Here [https://github.com/nisha2110/Midterm_project_Calc/tree/master/calculator/plugins]
+- Link Here: https://github.com/nisha2110/Midterm_project_Calc/tree/master/calculator/plugins
 
 3. Calculation History Management with Pandas:
 - Supports saving, loading, clearing, and deleting calculation history using Pandas.
 - History is stored in arithmetic_operations.csv.
-- Link Here calculation history  [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/history.py] 
-- Link Here CSV file [https://github.com/nisha2110/Midterm_project_Calc/tree/master/data]
+- Link Here calculation history: https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/history.py
+- Link Here CSV file: https://github.com/nisha2110/Midterm_project_Calc/tree/master/data
 
 ## Design Patterns and Architecture:
 1. Facade Pattern:
 - Simplifies data manipulation using Pandas by encapsulating complex interactions.
-- Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/history.py]
+- Link Here: https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/history.py
 2. Command Pattern:
 - Structures commands within the REPL, enabling easier addition and management of commands.
-- Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py]
+- Link Here : https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py
 3. Factory Method, Singleton, and Strategy Patterns:
 - Enhance code flexibility and scalability.
 
@@ -57,8 +57,8 @@ Use the menu command within the REPL to view available commands.
 - logging.basicConfig() sets up logging with a specific format, outputting logs to both a file (calculator.log) and the console.
 - Reads the logging.conf file to set up the logging system based on the detailed configuration provided.
 - We can write logs using logging.info(), logging.warning(), and logging.error() within our program. The logs will be managed by the - - handlers our configured (console output and rotating file).
-- Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/logging.conf]
-- Link to logs manage [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py]
+- Link Here: https://github.com/nisha2110/Midterm_project_Calc/blob/master/logging.conf
+- Link to logs manage: https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/__init__.py
 ## Exception Handling (LBYL & EAFP)
 1. Look Before You Leap (LBYL):
 - Check conditions before executing code that may cause exceptions (e.g., checking file existence before reading).
@@ -66,10 +66,10 @@ Use the menu command within the REPL to view available commands.
 -  This is a precautionary step to ensure the code only tries to read the file if it is actually present.
 - If the file exists, it proceeds to read the data from the file inside a try block, which allows it to handle any potential exceptions 
 - If the file does not exist, it avoids the read attempt and directly creates a new, empty DataFrame.
-- Link Here [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/plugins/csv/csv_command.py]
+- Link Here https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/plugins/csv/csv_command.py
 2. Easier to Ask for Forgiveness than Permission (EAFP):
 - Use try-except blocks to handle potential exceptions gracefully.
-Link to EAFP [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/commands/__init__.py]
+Link to EAFP : https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/commands/__init__.py
 ## Instructions:
 1. create clone the repo.
 2. First Deactivate the virtual environment with the command "deactivate" and then activate it again command.
