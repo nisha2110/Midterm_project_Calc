@@ -1,6 +1,8 @@
 # Mid-term Project Description:
 - This project is a Midterm project  focuses on building an advanced calculator app in python. It is designed to highlight industry level coding practicies and flow, including design patterns, modular code, logging, environment variable configuration and more. 
 
+## Video demonstration:
+- Link Here [https://www.youtube.com/watch?v=eyA2-21DJp0]
 ## Key Features:
 1. Basic Arithmetic Operations:
 - Integrate these concepts with existing program to add four basic commands: add, subtract, multiply, and divide, making calculator interactive  through a command-line interface (REPL).
@@ -13,7 +15,7 @@
 - This feature involves setting up GitHub Actions to automatically run our program's tests whenever changes are pushed to the main branch. By doing this, yoweu can ensure that any new code additions or modifications don't break existing functionality.
 6. Environment Variables:
 - Using environment variables is important for managing sensitive data like passwords, API keys, and other configuration settings without hardcoding them in our program. By storing this information in environment variables, we can keep it secure and easily change it without modifying the code.
-- This variable indicates the environment in which your application is running. Common values include DEVELOPMENT, TESTING, and PRODUCTION and Ensure .env file is properly loaded (using packages like python-dotenv if needed) to access these variables.
+- This variable indicates the environment in which our application is running. Common values include DEVELOPMENT, TESTING, and PRODUCTION and Ensure .env file is properly loaded (using packages like python-dotenv if needed) to access these variables.
 - create .env file 
  - ENVIRONMENT=DEVELOPMENT
  - DATABASE_USERNAME=root
@@ -22,7 +24,7 @@
 7. Logging:
 - Adding logging functionality to our program will allow us to track application behavior, monitor usage, and debug more effectively. Unlike simple print statements, logging can provide more structured and detailed output.
 
-## implememtation of the design patterns:
+## Implememtation of the design patterns:
 1. Command-Line Interface (REPL):
 - The REPL interface (app.start()) enables direct interaction with the calculator.
 Supports arithmetic operations (add, subtract, multiply, divide) and manages calculation history.
@@ -38,7 +40,7 @@ Use the menu command within the REPL to view available commands.
 3. Calculation History Management with Pandas:
 - Supports saving, loading, clearing, and deleting calculation history using Pandas.
 - History is stored in arithmetic_operations.csv.
-- Link Here calculation history  [] 
+- Link Here calculation history  [https://github.com/nisha2110/Midterm_project_Calc/blob/master/calculator/history.py] 
 - Link Here CSV file [https://github.com/nisha2110/Midterm_project_Calc/tree/master/data]
 
 ## Design Patterns and Architecture:
